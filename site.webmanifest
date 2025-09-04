@@ -1,0 +1,31 @@
+{
+  "name": "美绘-指尖上的艺术创作",
+  "short_name": "美绘",
+  "description": "极简且上手即用的跨平台涂色应用",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/imgs/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/imgs/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "books",
+    "education",
+    "productivity"
+  ],
+  "lang": "zh-CN",
+  "dir": "ltr"
+}
