@@ -172,6 +172,34 @@ export default function LandingPage() {
     setIsDarkMode(!isDarkMode);
   };
 
+  const handleEmailClick = async (e) => {
+    e.preventDefault();
+    const email = 'meihui@xinhuiben.com';
+
+    try {
+      // 复制邮箱到剪贴板
+      await navigator.clipboard.writeText(email);
+
+      // 显示复制成功提示
+      alert(`邮箱地址已复制到剪贴板：${email}`);
+
+      // 打开邮件客户端
+      window.location.href = `mailto:${email}`;
+    } catch (err) {
+      console.error('复制失败:', err);
+      // 如果clipboard API不可用，使用传统方法
+      const textArea = document.createElement('textarea');
+      textArea.value = email;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+
+      alert(`邮箱地址已复制到剪贴板：${email}`);
+      window.location.href = `mailto:${email}`;
+    }
+  };
+
   const features = [
     { icon: <Icon1 />, title: '相册导入', description: '把照片一键变为上色底图，将美好瞬间转化为创作灵感。' },
     { icon: <Icon2 />, title: '本地处理', description: '所有处理在本地完成，不上传，不收集个人信息。' },
@@ -352,6 +380,20 @@ export default function LandingPage() {
           </div>
         </section>
 
+        <section className={`${isDarkMode ? 'bg-gray-900' : 'bg-white'} py-24 px-4`}>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-4`}>公司简介</h2>
+              <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>石家庄美盈信息技术有限公司</p>
+            </div>
+            <div className="prose prose-lg mx-auto">
+              <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} text-center max-w-3xl mx-auto`}>
+                石家庄美盈信息技术有限公司作为一家成立于2014年的互联网企业，我们始终秉持"十年深耕，专注极简体验"的理念，在数字创意工具领域积累了深厚的技术沉淀与用户洞察。依托互联网公司的技术基因，团队持续将前沿交互设计与流畅性能优化融入产品研发，为用户打造无负担的数字创作体验。
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className={`${isDarkMode ? 'bg-gray-800' : 'bg-gray-50'} py-24 px-4 relative`}>
             <div className="absolute inset-0 bg-[url('https://picsum.photos/1920/468')] bg-cover bg-center opacity-20"></div>
             <div className="max-w-3xl mx-auto text-center relative">
@@ -379,11 +421,7 @@ export default function LandingPage() {
             <div>
               <h4 className={`text-lg font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-black'}`}>支持</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className={`${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-zinc-500 hover:text-black'} transition-colors`}>GitHub Issues</a></li>
-                <li><a href="#" className={`${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-zinc-500 hover:text-black'} transition-colors`}>Email</a></li>
-                <li><a href="#" className={`${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-zinc-500 hover:text-black'} transition-colors`}>Telegram 群组</a></li>
-                <li><a href="#" className={`${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-zinc-500 hover:text-black'} transition-colors`}>QQ 群聊</a></li>
-                <li><a href="#" className={`${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-zinc-500 hover:text-black'} transition-colors`}>微信群聊</a></li>
+                <li><button onClick={handleEmailClick} className={`${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-zinc-500 hover:text-black'} transition-colors cursor-pointer bg-transparent border-none text-left`}>Email</button></li>
               </ul>
             </div>
       <div>
@@ -394,8 +432,13 @@ export default function LandingPage() {
               </ul>
             </div>
           </div>
-          <div className={`text-center text-sm ${isDarkMode ? 'text-gray-400 border-gray-700' : 'text-zinc-500 border-gray-200'} pt-8 border-t`}>
-            © 2025 • 美绘 保留所有权利。
+          <div className={`text-center text-sm ${isDarkMode ? 'text-gray-400 border-gray-700' : 'text-zinc-500 border-gray-200'} pt-8 border-t space-y-2`}>
+            <div>© 2025 • 美绘 保留所有权利。</div>
+            <div>
+              <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className={`${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-zinc-500 hover:text-black'} transition-colors`}>
+                冀ICP备18023233号-3
+              </a>
+            </div>
           </div>
       </div>
       </footer>

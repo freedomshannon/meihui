@@ -112,6 +112,19 @@ export default function ChangelogPage({ onBackHome, onGoToDownload, onGoToPricin
           </div>
         </div>
       </main>
+
+      <footer className={`${isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'} border-t`}>
+        <div className="max-w-7xl mx-auto py-12 px-4">
+          <div className="text-center text-sm space-y-2">
+            <div>© 2025 • 美绘 保留所有权利。</div>
+            <div>
+              <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className={`${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-zinc-500 hover:text-black'} transition-colors`}>
+                冀ICP备18023233号-3
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
