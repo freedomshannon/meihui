@@ -386,9 +386,12 @@ export default function LandingPage() {
               <h2 className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-4`}>公司简介</h2>
               <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>石家庄美盈信息技术有限公司</p>
             </div>
-            <div className="prose prose-lg mx-auto">
-              <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} text-center max-w-3xl mx-auto`}>
-                石家庄美盈信息技术有限公司作为一家成立于2014年的互联网企业，我们始终秉持"十年深耕，专注极简体验"的理念，在数字创意工具领域积累了深厚的技术沉淀与用户洞察。依托互联网公司的技术基因，团队持续将前沿交互设计与流畅性能优化融入产品研发，为用户打造无负担的数字创作体验。
+            <div className="prose prose-lg mx-auto space-y-6">
+              <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} text-left max-w-3xl mx-auto`} style={{textIndent: '2em'}}>
+                石家庄美盈信息技术有限公司作为一家成立于2014年的互联网企业，我们始终秉持"十年深耕，专注极简体验"的核心理念，专业致力于数字创意工具领域的深度耕耘与创新发展。经过近十年的稳健发展，公司已在行业内建立了良好的品牌声誉和市场地位，凭借敏锐的市场洞察力和前瞻性的产品规划，我们深度理解用户在数字化创作过程中的真实需求与痛点，并将这些宝贵的用户洞察转化为产品优化的核心驱动力。
+              </p>
+              <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} text-left max-w-3xl mx-auto`} style={{textIndent: '2em'}}>
+                依托深厚的互联网技术基因和专业的研发团队优势，我们持续将前沿的交互设计理念、先进的性能优化技术以及人性化的用户体验设计深度融入到每一个产品的研发全周期中。通过不断的技术创新和产品迭代升级，我们致力于为广大用户打造真正无负担、高效率的数字创作体验，让复杂的创意工作变得简单而愉悦，助力用户在数字化时代中释放无限的创造潜能，实现从创意构想到成果呈现的完美转化。
               </p>
             </div>
           </div>
